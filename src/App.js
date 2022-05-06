@@ -3,6 +3,8 @@ import React from 'react';
 import logo from './assets/img/igc.png'
 class App extends React.Component {
 
+  url = "https://infogalaxycomp.com"
+
   constructor(){
     super()
     this.state = {
@@ -10,11 +12,16 @@ class App extends React.Component {
     }
   }
 
+  onClick = ($event) => {
+      console.log("Image Clicked",$event);
+      window.open(this.url,'_blank');
+  }
+
   render() {
     return (
       <div>
         <h1>{this.state.title}</h1>
-        <img src={logo} alt="The InfoGalaxy Logo"></img>
+        <img src={logo} onClick={this.onClick} alt="The InfoGalaxy Logo"></img>
       </div>
     );
   }
